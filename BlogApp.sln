@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F613B34B-9780-421E-9642-C3B045B514B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A1D96427-BBF3-4CF6-9994-2C63DFF64B71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{4133BDDD-D7DF-4322-B6D5-DE288AD00F30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{15452912-680C-4763-9302-B15F58B36258}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{2BF70C33-BD05-4F0A-9E8D-CBEC37F48B3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{EB81B1AA-15EE-4DC5-9DBF-FC6315472211}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Models", "Blog.Models\Blog.Models.csproj", "{08C1AEE0-32D9-4C6D-A108-DF293B6DE067}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.WebApi", "Blog.WebApi\Blog.WebApi.csproj", "{89A33817-0E21-4F72-96F3-0F1066A5FAD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Application", "Blog.Application\Blog.Application.csproj", "{28893D83-9A96-4A29-A16C-D126F56FA653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Infrastructure", "Blog.Infrastructure\Blog.Infrastructure.csproj", "{F8EBFDE1-890E-427B-ADA6-E8E162D61383}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08C1AEE0-32D9-4C6D-A108-DF293B6DE067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C1AEE0-32D9-4C6D-A108-DF293B6DE067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C1AEE0-32D9-4C6D-A108-DF293B6DE067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C1AEE0-32D9-4C6D-A108-DF293B6DE067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89A33817-0E21-4F72-96F3-0F1066A5FAD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A33817-0E21-4F72-96F3-0F1066A5FAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A33817-0E21-4F72-96F3-0F1066A5FAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A33817-0E21-4F72-96F3-0F1066A5FAD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28893D83-9A96-4A29-A16C-D126F56FA653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28893D83-9A96-4A29-A16C-D126F56FA653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28893D83-9A96-4A29-A16C-D126F56FA653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28893D83-9A96-4A29-A16C-D126F56FA653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8EBFDE1-890E-427B-ADA6-E8E162D61383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8EBFDE1-890E-427B-ADA6-E8E162D61383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8EBFDE1-890E-427B-ADA6-E8E162D61383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8EBFDE1-890E-427B-ADA6-E8E162D61383}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A1D96427-BBF3-4CF6-9994-2C63DFF64B71} = {F613B34B-9780-421E-9642-C3B045B514B4}
+		{4133BDDD-D7DF-4322-B6D5-DE288AD00F30} = {F613B34B-9780-421E-9642-C3B045B514B4}
+		{15452912-680C-4763-9302-B15F58B36258} = {F613B34B-9780-421E-9642-C3B045B514B4}
+		{2BF70C33-BD05-4F0A-9E8D-CBEC37F48B3D} = {F613B34B-9780-421E-9642-C3B045B514B4}
+		{08C1AEE0-32D9-4C6D-A108-DF293B6DE067} = {15452912-680C-4763-9302-B15F58B36258}
+		{89A33817-0E21-4F72-96F3-0F1066A5FAD4} = {2BF70C33-BD05-4F0A-9E8D-CBEC37F48B3D}
+		{28893D83-9A96-4A29-A16C-D126F56FA653} = {4133BDDD-D7DF-4322-B6D5-DE288AD00F30}
+		{F8EBFDE1-890E-427B-ADA6-E8E162D61383} = {A1D96427-BBF3-4CF6-9994-2C63DFF64B71}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50130A36-0834-422B-B796-516FDE60A742}
+	EndGlobalSection
+EndGlobal
