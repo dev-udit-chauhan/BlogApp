@@ -11,11 +11,11 @@ namespace Blog.Infrastructure.Contracts
     {
         Task<bool> AddBlogAsync(BlogEntity blog);
         
-        Task<bool> DeleteBlogAsync(int blogID);
+        Task<bool> DeleteBlogAsync(int blogId);
         
         Task<List<BlogEntity>> GetAllBlogsAsync();
 
-        Task<BlogEntity> GetBlogByIDAsync(int blogID);
+        Task<BlogEntity> GetBlogByIDAsync(int blogId);
 
         Task<bool> UpdateBlogAsync(BlogEntity blog);
 

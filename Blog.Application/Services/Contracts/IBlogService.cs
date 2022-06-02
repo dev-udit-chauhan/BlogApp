@@ -10,11 +10,11 @@ namespace Blog.Application.Services.Contracts
     {
         Task<bool> AddBlogAsync(Models.Blog blog);
 
-        Task<bool> DeleteBlogAsync(int blogID);
+        Task<bool> DeleteBlogAsync(int blogId);
 
         Task<List<Models.Blog>> GetAllBlogsAsync();
 
-        Task<Models.Blog> GetBlogByIDAsync(int blogID);
+        Task<Models.Blog> GetBlogByIDAsync(int blogId);
 
         Task<bool> UpdateBlogAsync(Models.Blog blog);
     }

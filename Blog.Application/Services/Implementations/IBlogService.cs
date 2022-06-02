@@ -14,7 +14,7 @@ namespace Blog.Application.Services.Implementations
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteBlogAsync(int blogID)
+        public Task<bool> DeleteBlogAsync(int blogId)
         {
             throw new NotImplementedException();
         }
@@ -24,7 +24,7 @@ namespace Blog.Application.Services.Implementations
             throw new NotImplementedException();
         }
 
-        public Task<Models.Blog> GetBlogByIDAsync(int blogID)
+        public Task<Models.Blog> GetBlogByIDAsync(int blogId)
         {
             throw new NotImplementedException();
         }
