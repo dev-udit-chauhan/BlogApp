@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Blog.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Blog.WebApi.Controllers.V1.BlogController.#ctor(Microsoft.Extensions.Logging.ILogger{Blog.WebApi.Controllers.V1.BlogController},AutoMapper.IMapper,Blog.Application.Services.Contracts.IBlogService)">
+            <summary>
+            Injecting services
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="blogService"></param>
+        </member>
+        <member name="M:Blog.WebApi.Controllers.V1.BlogController.AddBlogAsync(Blog.Models.Blog)">
+            <summary>
+            Create a new Blog Asynchronously
+            </summary>
+            <param name="blog">Blog Model</param>
+            <returns>Blog Model</returns>
+        </member>
+        <member name="M:Blog.WebApi.Controllers.V1.BlogController.GetBlogByIDAsync(System.Int32)">
+            <summary>
+            Gets a blog by its blogId Asynchronously
+            </summary>
+            <param name="blogId">BlogId</param>
+            <returns>Blog Model</returns>
+        </member>
+        <member name="M:Blog.WebApi.Controllers.V1.BlogController.GetAllBlogsAsync">
+            <summary>
+            Gets all blogs Asynchronously
+            </summary>
+            <returns>List of Blogs</returns>
+        </member>
+        <member name="M:Blog.WebApi.Controllers.V1.BlogController.UpdateBlogAsync(Blog.Models.Blog)">
+            <summary>
+            Updates a Model Asynchronously
+            </summary>
+            <param name="blog">Blog</param>
+            <returns>Accepted</returns>
+        </member>
+        <member name="M:Blog.WebApi.Controllers.V1.BlogController.DeleteBlogAsync(System.Int32)">
+            <summary>
+            Deletes a blog Asynchronously 
+            </summary>
+            <param name="blogId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.WebApi.Controllers.V1.UserController">
+            <summary>
+            User Controller
+            </summary>
+        </member>
+        <member name="M:Blog.WebApi.Controllers.V1.UserController.RegisterUserAsync(Blog.Models.User)">
+            <summary>
+            Register User Asynchronously
+            </summary>
+            <param name="user">User</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.WebApi.Controllers.V1.UserController.LoginAsync(Blog.Models.User)">
+            <summary>
+            Logs in user Asynchronously
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Blog.WebApi.Startup.Configuration">
+            <summary>
+            Gets Configuration
+            </summary>
+        </member>
+    </members>
+</doc>

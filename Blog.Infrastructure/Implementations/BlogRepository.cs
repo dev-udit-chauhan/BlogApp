@@ -1,5 +1,6 @@
 ﻿using Blog.Infrastructure.Contracts;
 using Blog.Infrastructure.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +11,54 @@ namespace Blog.Infrastructure.Implementation
 {
     public class BlogRepository : IBlogRepository
     {
-        public Task<bool> AddBlogAsync(BlogEntity blog)
+        private readonly BlogDbContext dbContext;
+
+        public BlogRepository(BlogDbContext dbContext)
         {
-            throw new NotImplementedException();
+            this.dbContext = dbContext;
+        }
+        public async Task<Entities.Blog> AddBlogAsync(Entities.Blog blog)
+        {
+            await dbContext.Blogs.AddAsync(blog);
+            await dbContext.SaveChangesAsync();
+            return blog;
         }
 
-        public Task<bool> DeleteBlogAsync(int blogId)
+        public async Task<Entities.Blog> DeleteBlogAsync(int blogId)
         {
-            throw new NotImplementedException();
+            var blog = await dbContext.Blogs.FirstOrDefaultAsync(x => x.BlogId == blogId);
+            var blogEntity = blog;
+            dbContext.Blogs.Remove(blog);
+            await dbContext.SaveChangesAsync();
+            return blogEntity;
         }
 
-        public Task<List<BlogEntity>> GetAllBlogsAsync()
+        public async Task<List<Entities.Blog>> GetAllBlogsAsync()
         {
-            throw new NotImplementedException();
+            return await dbContext.Blogs.ToListAsync();
         }
 
-        public Task<BlogEntity> GetBlogByIDAsync(int blogId)
+        public async Task<Entities.Blog> GetBlogByIDAsync(int blogId)
         {
-            throw new NotImplementedException();
+            var blog = await dbContext.Blogs.FirstOrDefaultAsync(x => x.BlogId == blogId);
+            return blog;
         }
 
-        public Task<bool> UpdateBlogAsync(BlogEntity blog)
+        public async Task<Entities.Blog> UpdateBlogAsync(Entities.Blog blog)
         {
-            throw new NotImplementedException();
+            var blogEntity = await dbContext.Blogs.FirstOrDefaultAsync(x => x.BlogId == blog.BlogId);
+            if (blogEntity == null)
+                throw new ArgumentException($"Blog with BlogId: {blog.BlogId} does not exist");
+            blogEntity.Author = blog.Author;
+            blogEntity.Tag = blog.Tag;
+            blogEntity.Content = blog.Content;
+            blogEntity.DateCreated = blog.DateCreated;
+            blogEntity.TypeOfBlog = blog.TypeOfBlog;
+            blogEntity.Title = blog.Title;
+            dbContext.Entry<Entities.Blog>(blogEntity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            await dbContext.SaveChangesAsync();
+
+            return blogEntity;
         }
     }
 }

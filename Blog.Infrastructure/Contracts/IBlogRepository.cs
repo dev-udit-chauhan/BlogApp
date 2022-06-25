@@ -9,15 +9,15 @@ namespace Blog.Infrastructure.Contracts
 {
     public interface IBlogRepository
     {
-        Task<bool> AddBlogAsync(BlogEntity blog);
+        Task<Entities.Blog> AddBlogAsync(Entities.Blog blog);
         
-        Task<bool> DeleteBlogAsync(int blogId);
+        Task<Entities.Blog> DeleteBlogAsync(int blogId);
         
-        Task<List<BlogEntity>> GetAllBlogsAsync();
+        Task<List<Entities.Blog>> GetAllBlogsAsync();
 
-        Task<BlogEntity> GetBlogByIDAsync(int blogId);
+        Task<Entities.Blog> GetBlogByIDAsync(int blogId);
 
-        Task<bool> UpdateBlogAsync(BlogEntity blog);
+        Task<Entities.Blog> UpdateBlogAsync(Entities.Blog blog);
 
     }
 }
