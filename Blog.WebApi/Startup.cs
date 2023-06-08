@@ -32,6 +32,7 @@ namespace Blog.WebApi
         /// Gets Configuration
         /// </summary>
         public IConfiguration Configuration { get; }
+        string allowOriginsPolicy = "allowOriginsPolicy";
 
         public Startup(IConfiguration configuration)
         {
@@ -58,7 +59,7 @@ namespace Blog.WebApi
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
-                        Name = "Udit Chauhan",
+                        Name = "Udit X",
                         Url = new Uri("https://example.com/contact")
                     },
                     License = new OpenApiLicense
@@ -90,21 +91,41 @@ namespace Blog.WebApi
                         ValidIssuer = "UserService"
                     };
                 });
-            
+            var corsOrigin = Configuration.GetSection("AllowedOrigins").Value;
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: allowOriginsPolicy,
+                policy =>
+                {
+                    policy.WithOrigins(corsOrigin.Split(','));
+                    policy.AllowAnyMethod();
+                    policy.AllowAnyHeader();
+                });
+            });
+
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.EnvironmentName == Environments.Development)
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(options =>
-                {
-                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-                    options.RoutePrefix = string.Empty;
-                });
-            }  
+               
+            }
+            app.UseCors(allowOriginsPolicy);
+            /*app.UseCors(
+                 policy =>
+                     policy.WithOrigins(corsOrigin.Split(','))
+                     .AllowAnyMethod()
+                     .AllowAnyHeader()
+            );*/
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                options.RoutePrefix = string.Empty;
+            });
             app.UseRouting();
+            
 
             app.UseAuthentication();
 
@@ -112,7 +133,7 @@ namespace Blog.WebApi
             app.UseEndpoints(endpoints =>
             {                
                 endpoints.MapControllers();
-            });
+            });            
         }
     }
 }
