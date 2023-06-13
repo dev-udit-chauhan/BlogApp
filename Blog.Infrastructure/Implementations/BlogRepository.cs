@@ -57,7 +57,6 @@ namespace Blog.Infrastructure.Implementation
             blogEntity.Title = blog.Title;
             dbContext.Entry<Entities.Blog>(blogEntity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             await dbContext.SaveChangesAsync();
-
             return blogEntity;
         }
     }

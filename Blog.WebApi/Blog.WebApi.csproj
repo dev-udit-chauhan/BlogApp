@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <StartupObject>Blog.WebApi.Program</StartupObject>
     <AppDesignerFolder>Properties</AppDesignerFolder>
   </PropertyGroup>
@@ -17,6 +17,7 @@
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
 	  <PackageReference Include="Microsoft.AspNetCore.App" />
 	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.17" />
+	  <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />  
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />

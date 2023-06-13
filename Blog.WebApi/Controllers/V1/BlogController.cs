@@ -3,6 +3,7 @@ using Blog.Application.Exceptions;
 using Blog.Application.Services.Contracts;
 using Blog.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -11,10 +12,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Type = System.Type;
 
 namespace Blog.WebApi.Controllers.V1
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("api/blog/v{version}/[controller]")]
     [ApiVersion("1.0")]
@@ -42,8 +44,8 @@ namespace Blog.WebApi.Controllers.V1
         /// </summary>
         /// <param name="blog">Blog Model</param>
         /// <returns>Blog Model</returns>
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        [HttpPost]        
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(Infrastructure.Entities.Blog))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
@@ -95,6 +97,7 @@ namespace Blog.WebApi.Controllers.V1
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [Route("/api/blog/{blogId}")]
+        [EnableCors("AllowOrigin")]
         public async Task<ActionResult<Infrastructure.Entities.Blog>> GetBlogByIDAsync(int blogId)
         {
             if (!ModelState.IsValid)
